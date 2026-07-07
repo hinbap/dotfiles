@@ -16,6 +16,7 @@ vim.opt.smartindent = true
 vim.opt.termguicolors = true
 vim.opt.undofile = true
 vim.opt.number = true
+vim.opt.wrap = false
 vim.wo.relativenumber = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.scrolloff = 999

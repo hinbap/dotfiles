@@ -23,7 +23,12 @@ return {
 
 				rust_analyzer = {},
 
-				tinymist = {},
+				tinymist = {
+					settings = {
+						formatterMode = "typstyle",
+						fontPaths = { "." },
+					},
+				},
 
 				marksman = {},
 

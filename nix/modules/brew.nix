@@ -9,6 +9,7 @@
 			"sdl2"
 			"sdl3"
 			"sdl3_ttf"
+			"libpq"
 			"llvm@15"
 			"pkg-config"
 			"luarocks"
@@ -16,12 +17,15 @@
 			"python"
 			"typst"
 			"zoxide"
+			"postgresql@18"
 		];
 
 		casks = [
 			"claude-code"
+			"dbeaver-community"
 			"zed"
 			"mactex"
+			"docker"
 			"nikitabobko/tap/aerospace"
 			"firefox"
 			"obsidian"
