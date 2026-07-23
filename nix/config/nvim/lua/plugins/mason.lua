@@ -22,6 +22,7 @@ return {
 					"rust_analyzer",
 					"tinymist",
 					"marksman",
+					"sqls",
 				},
 			})
 		end,

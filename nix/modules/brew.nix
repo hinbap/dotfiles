@@ -17,7 +17,6 @@
 			"python"
 			"typst"
 			"zoxide"
-			"postgresql@18"
 		];
 
 		casks = [
@@ -25,7 +24,6 @@
 			"dbeaver-community"
 			"zed"
 			"mactex"
-			"docker"
 			"nikitabobko/tap/aerospace"
 			"firefox"
 			"obsidian"

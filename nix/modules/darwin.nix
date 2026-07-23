@@ -32,7 +32,6 @@
 		wget
 		fd
 		fastfetch
-		docker
 		home-manager
 		git
 		gcc
