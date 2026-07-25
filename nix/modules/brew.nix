@@ -9,7 +9,6 @@
 			"sdl2"
 			"sdl3"
 			"sdl3_ttf"
-			"libpq"
 			"llvm@15"
 			"pkg-config"
 			"luarocks"

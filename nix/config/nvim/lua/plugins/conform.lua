@@ -7,6 +7,8 @@ return {
 				lua = { "stylua" },
 				python = { "isort", "black" },
 				sql = { "sql_formatter" },
+				svelte = { "prettier" },
+				html = { "prettier" },
 			},
 		})
 	end,

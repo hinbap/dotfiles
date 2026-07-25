@@ -23,6 +23,10 @@ return {
 					"tinymist",
 					"marksman",
 					"sqls",
+					"html",
+					"cssls",
+					"tailwindcss",
+					"svelte",
 				},
 			})
 		end,

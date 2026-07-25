@@ -52,6 +52,14 @@ return {
 						},
 					},
 				},
+
+				svelte = {},
+
+				html = {},
+
+				cssls = {},
+
+				tailwindcss = {},
 			}
 
 			for server, config in pairs(servers) do
