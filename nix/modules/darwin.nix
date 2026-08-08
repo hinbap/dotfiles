@@ -57,6 +57,7 @@
 		zsh-syntax-highlighting
 		zoxide
 
+		bun
 		tmux
 		zathuraPkgs.zathura_core
 		(noAppstream zathuraPkgs.zathura_pdf_mupdf)
