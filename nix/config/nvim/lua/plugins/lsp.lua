@@ -77,15 +77,27 @@ return {
 						buffer = args.buf,
 					}
 
-					vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+					local caps = vim.lsp.get_client_by_id(args.data.client_id).server_capabilities
 
-					vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+					if caps.definitionProvider then
+						vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+					end
 
-					vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+					if caps.referencesProvider then
+						vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+					end
 
-					vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+					if caps.hoverProvider then
+						vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+					end
 
-					vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+					if caps.renameProvider then
+						vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+					end
+
+					if caps.codeActionProvider then
+						vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+					end
 				end,
 			})
 

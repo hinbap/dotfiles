@@ -63,6 +63,8 @@
 		(noAppstream zathuraPkgs.zathura_pdf_mupdf)
 		(noAppstream zathuraPkgs.zathura_pdf_poppler)
 
+		texlivePackages.doublestroke
+
 		curl
 		mas
 		ollama

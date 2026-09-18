@@ -16,6 +16,7 @@
 			"python"
 			"typst"
 			"zoxide"
+			"tree-sitter-cli"
 		];
 
 		casks = [
