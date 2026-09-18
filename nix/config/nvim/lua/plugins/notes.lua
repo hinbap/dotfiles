@@ -9,11 +9,17 @@ return {
 			opts.custom_handlers = opts.custom_handlers or {}
 			opts.custom_handlers.markdown = require("obsidian-query").handler
 			opts.custom_handlers.markdown_inline = require("obsidian-query.inline").handler
-			opts.latex = {
-				enabled = true,
-				converter = "latex2text", -- requires pylatexenc
-				highlight = "RenderMarkdownMath",
-			}
+		end,
+		config = function()
+			require("render-markdown").setup({
+				latex = {
+					enabled = true,
+					converter = "latex2text", -- requires pylatexenc
+					inline = true,
+					block = true,
+					highlight = "RenderMarkdownMath",
+				},
+			})
 		end,
 	},
 
@@ -66,8 +72,7 @@ return {
 		-- never equal date literals (midnight). Floor them to day start.
 		-- Remove this once fixed upstream.
 		build = function()
-			local f = vim.fn.stdpath("data")
-				.. "/lazy/obsidian-query.nvim/lua/obsidian-query/dataview/page.lua"
+			local f = vim.fn.stdpath("data") .. "/lazy/obsidian-query.nvim/lua/obsidian-query/dataview/page.lua"
 			local text = table.concat(vim.fn.readfile(f), "\n")
 			if text:find("local function day_start") then
 				return
@@ -85,8 +90,8 @@ end
 ]]
 			text = text:gsub("local NULL = value.NULL", helper, 1)
 			text = text:gsub(
-				vim.pesc("mday = value.date(row.mtime or 0, \"date\"),"),
-				"mday = value.date(day_start(row.mtime or 0), \"date\"),",
+				vim.pesc('mday = value.date(row.mtime or 0, "date"),'),
+				'mday = value.date(day_start(row.mtime or 0), "date"),',
 				1
 			)
 			text = text:gsub(
@@ -108,4 +113,3 @@ end
 		end,
 	},
 }
-
