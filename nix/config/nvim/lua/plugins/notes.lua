@@ -10,16 +10,17 @@ return {
 			opts.custom_handlers.markdown = require("obsidian-query").handler
 			opts.custom_handlers.markdown_inline = require("obsidian-query.inline").handler
 		end,
-		config = function()
-			require("render-markdown").setup({
-				latex = {
-					enabled = true,
-					converter = "latex2text", -- requires pylatexenc
-					inline = true,
-					block = true,
-					highlight = "RenderMarkdownMath",
-				},
-			})
+		config = function(_, opts)
+			opts.latex = {
+				enabled = true,
+				converter = "latex2text", -- requires pylatexenc
+				inline = true,
+				block = true,
+				highlight = "RenderMarkdownMath",
+				bottom_pad = 0.5,
+				top_pad = 0.5,
+			}
+			require("render-markdown").setup(opts)
 		end,
 	},
 

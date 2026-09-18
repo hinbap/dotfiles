@@ -27,6 +27,7 @@ return {
 					"cssls",
 					"tailwindcss",
 					"svelte",
+					"texlab",
 				},
 			})
 		end,

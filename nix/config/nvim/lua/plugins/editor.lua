@@ -57,6 +57,21 @@ return {
 			check_ts = true,
 			enable_check_bracket_line = true,
 		},
+		config = function(_, opts)
+			local npairs = require("nvim-autopairs")
+			local Rule = require("nvim-autopairs.rule")
+			local cond = require("nvim-autopairs.conds")
+			npairs.setup(opts)
+			npairs.add_rules({
+				-- inline math $...$ in markdown
+				Rule("$", "$", { "markdown", "rmd", "quarto" })
+					:with_move(cond.move_right())
+:with_pair(function(p_opts)
+					-- don't pair currency like "$5"
+					return not p_opts.next_char:match("%d")
+				end),
+			})
+		end,
 	},
 
 	{

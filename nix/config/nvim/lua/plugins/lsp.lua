@@ -55,6 +55,8 @@ return {
 
 				svelte = {},
 
+				texlab = {},
+
 				html = {},
 
 				cssls = {},
