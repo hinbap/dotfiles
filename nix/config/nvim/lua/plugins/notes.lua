@@ -13,7 +13,7 @@ return {
 		config = function(_, opts)
 			opts.latex = {
 				enabled = true,
-				converter = "latex2text", -- requires pylatexenc
+				converter = vim.fn.expand("~/.local/bin/latex2text"), -- requires pylatexenc
 				inline = true,
 				block = true,
 				highlight = "RenderMarkdownMath",
