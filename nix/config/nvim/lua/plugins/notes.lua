@@ -111,6 +111,8 @@ end
 		init = function()
 			-- VimTeX configuration goes here, e.g.
 			vim.g.vimtex_view_method = "zathura"
+			-- our nix nvim is 0.12.2; vimtex wants 0.12.4+
+			vim.g.vimtex_version_check = 0
 		end,
 	},
 }
