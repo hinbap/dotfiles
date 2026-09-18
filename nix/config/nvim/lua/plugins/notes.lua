@@ -62,6 +62,40 @@ return {
 		opts = {
 			picker = { style = "rich" }, -- show task text and query columns
 		},
+		-- Upstream bug: file.cday / file.mday carry the time-of-day, so they
+		-- never equal date literals (midnight). Floor them to day start.
+		-- Remove this once fixed upstream.
+		build = function()
+			local f = vim.fn.stdpath("data")
+				.. "/lazy/obsidian-query.nvim/lua/obsidian-query/dataview/page.lua"
+			local text = table.concat(vim.fn.readfile(f), "\n")
+			if text:find("local function day_start") then
+				return
+			end
+			local helper = [[
+
+local NULL = value.NULL
+
+---Floor a raw epoch ts to local midnight so "date"-precision values compare
+---equal to date literals (parse_date already floors to midnight).
+local function day_start(ts)
+	local t = os.date("*t", math.floor(ts))
+	return os.time({ year = t.year, month = t.month, day = t.day, hour = 0, min = 0, sec = 0 })
+end
+]]
+			text = text:gsub("local NULL = value.NULL", helper, 1)
+			text = text:gsub(
+				vim.pesc("mday = value.date(row.mtime or 0, \"date\"),"),
+				"mday = value.date(day_start(row.mtime or 0), \"date\"),",
+				1
+			)
+			text = text:gsub(
+				vim.pesc('rawset(self, "cday", value.date(ts, "date"))'),
+				'rawset(self, "cday", value.date(day_start(ts), "date"))',
+				1
+			)
+			vim.fn.writefile(vim.split(text, "\n", { plain = true }), f)
+		end,
 	},
 
 	{
