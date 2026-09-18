@@ -21,17 +21,7 @@ return {
 		version = "*", -- use latest release, remove to use latest commit
 		---@module 'obsidian'
 		---@type obsidian.config
-		opts = {
-			workspaces = {
-				{
-					name = "catacomb",
-					path = "~/Documents/Catacomb",
-				},
-			},
-			picker = {
-				name = "telescope.nvim",
-			},
-		},
+		opts = {},
 
 		config = function()
 			require("obsidian").setup({
@@ -41,6 +31,16 @@ return {
 						local encoded_name = require("obsidian.util").urlencode(name)
 						return string.format("![%s](%s)", name, encoded_name)
 					end,
+				},
+
+				workspaces = {
+					{
+						name = "catacomb",
+						path = "~/Documents/Catacomb",
+					},
+				},
+				picker = {
+					name = "telescope.nvim",
 				},
 			})
 		end,
