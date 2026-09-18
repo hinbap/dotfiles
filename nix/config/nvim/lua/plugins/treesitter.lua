@@ -37,6 +37,7 @@ return {
 				"python",
 				"csv",
 				"go",
+				"latex",
 			},
 		})
 	end,

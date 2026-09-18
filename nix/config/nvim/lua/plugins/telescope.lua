@@ -8,7 +8,7 @@ return {
 			"nvim-telescope/telescope-ui-select.nvim",
 		},
 		config = function()
-			require("nix.config.nvim.lua.plugins.telescope").setup({
+			require("telescope").setup({
 				defaults = {
 					mappings = {
 						i = {
@@ -24,7 +24,7 @@ return {
 					},
 				},
 			})
-			require("nix.config.nvim.lua.plugins.telescope").load_extension("ui-select")
+			require("telescope").load_extension("ui-select")
 		end,
 	},
 }

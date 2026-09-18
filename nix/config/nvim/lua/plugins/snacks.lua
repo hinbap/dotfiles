@@ -1,6 +1,8 @@
 return {
 	{
 		"folke/snacks.nvim",
+		priority = 1000,
+		lazy = false,
 		---@type snacks.Config
 		opts = {
 			picker = {
@@ -15,11 +17,7 @@ return {
 			},
 
 			img = {},
-		},
-	},
 
-	config = function()
-		require("snacks").setup({
 			image = {
 				resolve = function(path, src)
 					local api = require("obsidian.api")
@@ -28,6 +26,6 @@ return {
 					end
 				end,
 			},
-		})
-	end,
+		},
+	},
 }
