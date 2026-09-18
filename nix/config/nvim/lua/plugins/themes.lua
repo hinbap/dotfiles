@@ -97,8 +97,8 @@ return {
 				bright_border = true,
 				reduced_blue = false,
 				transparent = {
-					bg = false,
-					float = false,
+					bg = true,
+					float = true,
 				},
 			})
 

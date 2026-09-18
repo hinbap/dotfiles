@@ -26,5 +26,10 @@ return {
 				},
 			},
 		},
+		config = function()
+			require("obsidian").setup({
+				name = "telescope.nvim",
+			})
+		end,
 	},
 }
