@@ -6,7 +6,8 @@ background-opacity = 1
 # background-blur-radius = 75
 clipboard-read = allow
 theme = Onenord
-background = #151718
+background = #101212 
+# 151718
 # background = #12120F
 
 # for non-rounded window

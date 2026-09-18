@@ -28,7 +28,9 @@ return {
 		},
 		config = function()
 			require("obsidian").setup({
-				name = "telescope.nvim",
+				picker = {
+					name = "telescope.nvim",
+				},
 			})
 		end,
 	},
