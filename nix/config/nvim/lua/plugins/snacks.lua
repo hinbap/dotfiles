@@ -9,8 +9,10 @@ return {
 				win = {
 					input = {
 						keys = {
-							["<C-k>"] = { "select_and_prev", mode = { "n", "x" } },
-							["<C-j>"] = { "select_and_next", mode = { "n", "x" } },
+							["<c-k>"] = { "select_and_prev", mode = { "n", "x" } },
+							["<c-j>"] = { "select_and_next", mode = { "n", "x" } },
+							["<c-d>"] = { "list_down", mode = { "i", "n" } },
+							["<c-u>"] = { "list_up", mode = { "i", "n" } },
 						},
 					},
 				},
@@ -27,6 +29,7 @@ return {
 				end,
 			},
 		},
+
 		keys = {
 			-- Top Pickers & Explorer
 			{
@@ -67,4 +70,3 @@ return {
 		},
 	},
 }
-
