@@ -1,0 +1,71 @@
+# ─────────────────────────────────────────────
+# Zathura
+# ─────────────────────────────────────────────
+
+# General
+set selection-clipboard clipboard
+set guioptions ""
+set window-title-page true
+
+# Page layout
+set adjust-open "best-fit"
+set pages-per-row 1
+set scroll-page-aware true
+set scroll-full-overlap 0.01
+set scroll-step 100
+
+# Zoom
+set zoom-min 10
+
+# ─────────────────────────────────────────────
+# Colors
+# ─────────────────────────────────────────────
+
+# UI
+set default-bg "#1e1e2e"
+set default-fg "#cdd6f4"
+
+set statusbar-bg "#181825"
+set statusbar-fg "#cdd6f4"
+
+set inputbar-bg "#181825"
+set inputbar-fg "#cdd6f4"
+
+# Notifications
+set notification-bg "#181825"
+set notification-fg "#cdd6f4"
+
+set notification-error-bg "#181825"
+set notification-error-fg "#f38ba8"
+
+set notification-warning-bg "#181825"
+set notification-warning-fg "#f9e2af"
+
+# Completion menu
+set completion-bg "#181825"
+set completion-fg "#cdd6f4"
+set completion-highlight-bg "#89b4fa"
+set completion-highlight-fg "#1e1e2e"
+
+# Search / highlights
+set highlight-color "#f9e2af"
+set highlight-active-color "#89b4fa"
+
+# ─────────────────────────────────────────────
+# PDF appearance
+# ─────────────────────────────────────────────
+
+# Dark mode for PDFs
+set recolor true
+set recolor-lightcolor "#1e1e2e"
+set recolor-darkcolor "#cdd6f4"
+
+# Preserve colors in diagrams/images
+set recolor-keephue true
+set recolor-reverse-video true
+
+# ─────────────────────────────────────────────
+# Keybindings
+# ─────────────────────────────────────────────
+
+map f toggle_fullscreen
