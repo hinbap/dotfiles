@@ -51,16 +51,19 @@ return {
 				},
 			},
 			picker = {
-				name = "telescope.nvim",
+				name = "snacks.picker",
 			},
 		},
 	},
 
 	{
 		"miller3616/bases.nvim",
-		opts = {
-			vault_path = vim.fn.expand("~/Documents/Catacomb"),
-		},
+		ft = "obsidian_base",
+		config = function()
+			require("bases").setup({
+				vault_path = "/Users/doyeon/Documents/Catacomb",
+			})
+		end,
 	},
 
 	{
