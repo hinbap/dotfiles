@@ -79,16 +79,15 @@ return {
 				return
 			end
 			local helper = [[
+			local NULL = value.NULL
 
-local NULL = value.NULL
-
----Floor a raw epoch ts to local midnight so "date"-precision values compare
----equal to date literals (parse_date already floors to midnight).
-local function day_start(ts)
-	local t = os.date("*t", math.floor(ts))
-	return os.time({ year = t.year, month = t.month, day = t.day, hour = 0, min = 0, sec = 0 })
-end
-]]
+			---Floor a raw epoch ts to local midnight so "date"-precision values compare
+			---equal to date literals (parse_date already floors to midnight).
+			local function day_start(ts)
+				local t = os.date("*t", math.floor(ts))
+				return os.time({ year = t.year, month = t.month, day = t.day, hour = 0, min = 0, sec = 0 })
+			end
+			]]
 			text = text:gsub("local NULL = value.NULL", helper, 1)
 			text = text:gsub(
 				vim.pesc('mday = value.date(row.mtime or 0, "date"),'),
