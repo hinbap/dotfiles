@@ -5,18 +5,7 @@ return {
 		lazy = false,
 		---@type snacks.Config
 		opts = {
-			picker = {
-				win = {
-					input = {
-						keys = {
-							["<c-k>"] = { "select_and_prev", mode = { "n", "x" } },
-							["<c-j>"] = { "select_and_next", mode = { "n", "x" } },
-							["<c-d>"] = { "list_down", mode = { "i", "n" } },
-							["<c-u>"] = { "list_up", mode = { "i", "n" } },
-						},
-					},
-				},
-			},
+			picker = {},
 
 			img = {},
 
@@ -29,6 +18,23 @@ return {
 				end,
 			},
 		},
+
+		config = function()
+			require("snacks").setup({
+				picker = {
+					win = {
+						input = {
+							keys = {
+								["<c-j>"] = { "list_down", mode = { "i", "n" } },
+								["<c-k>"] = { "list_up", mode = { "i", "n" } },
+								["<c-d>"] = { "list_down", mode = { "i", "n" } },
+								["<c-u>"] = { "list_up", mode = { "i", "n" } },
+							},
+						},
+					},
+				},
+			})
+		end,
 
 		keys = {
 			-- Top Pickers & Explorer
