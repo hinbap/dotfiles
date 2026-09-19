@@ -5,6 +5,10 @@
 	home.homeDirectory = "/Users/doyeon";
 	home.stateVersion = "24.05";
 
+	home.sessionPath = [
+		"/Library/TeX/texbin"
+	];
+
   programs.git = {
     enable = true;
 

@@ -58,12 +58,9 @@ return {
 
 	{
 		"miller3616/bases.nvim",
-		ft = "obsidian_base",
-		config = function()
-			require("bases").setup({
-				vault_path = "/Users/doyeon/Documents/Catacomb",
-			})
-		end,
+		opts = {
+			vault_path = vim.fn.expand("~/Documents/Catacomb"),
+		},
 	},
 
 	{
