@@ -6,7 +6,9 @@
 		
 		taps = [];
 		brews = [
+			"zathura"
 			"zathura-pdf-poppler"
+			"zathura-pdf-mupdf"
 			"sdl2"
 			"sdl3"
 			"sdl3_ttf"
