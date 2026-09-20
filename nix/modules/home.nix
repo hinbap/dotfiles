@@ -69,6 +69,9 @@
 			export PATH="$HOME/.local/bin:$PATH"
 			export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
 			export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+			# VimTeX's zathura viewer talks to zathura over D-Bus; libdbus resolves
+			# this address via launchd (see the org.freedesktop.dbus-session LaunchAgent).
+			export DBUS_SESSION_BUS_ADDRESS="launchd:env=DBUS_LAUNCHD_SESSION_BUS_SOCKET"
 			if [[ -f ~/.config/zsh/.zshrc ]]; then
 				source ~/.config/zsh/.zshrc
 			fi
@@ -135,4 +138,10 @@
 	# in Catacomb/Latex/tex without rebuilding.
 	home.file."Library/texmf/tex/latex/local".source =
 		config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Documents/Catacomb/Latex/tex";
+
+	# Register the Homebrew dbus session bus as a per-user LaunchAgent so VimTeX
+	# can drive zathura over D-Bus (forward search, reload, close). Socket-activated,
+	# so the daemon only runs when something connects.
+	home.file."Library/LaunchAgents/org.freedesktop.dbus-session.plist".source =
+		config.lib.file.mkOutOfStoreSymlink "/opt/homebrew/opt/dbus/org.freedesktop.dbus-session.plist";
 }

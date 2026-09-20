@@ -112,6 +112,10 @@ return {
 			vim.g.vimtex_view_method = "zathura"
 			-- our nix nvim is 0.12.2; vimtex wants 0.12.4+
 			vim.g.vimtex_version_check = 0
+			-- Don't install VimTeX's conceal groups. We want raw LaTeX source in
+			-- .tex buffers; rendered-math previews belong to markdown via
+			-- render-markdown.nvim.
+			vim.g.vimtex_syntax_conceal_disable = 1
 		end,
 	},
 }
