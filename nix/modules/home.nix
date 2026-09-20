@@ -128,4 +128,11 @@
   home.file.".config/tmux".source = ../config/tmux;
 	home.file.".config/starship.toml".source = ../config/starship/starship.toml;
 	home.file.".config/yazi".source = ../config/yazi;
+
+	# Make shared LaTeX style files (homework.sty, macros.sty, ...) discoverable
+	# from any .tex file by exposing them through TEXMFHOME (~/Library/texmf on
+	# macOS/MacTeX). Uses an out-of-store symlink so the sources stay editable
+	# in Catacomb/Latex/tex without rebuilding.
+	home.file."Library/texmf/tex/latex/local".source =
+		config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Documents/Catacomb/Latex/tex";
 }
