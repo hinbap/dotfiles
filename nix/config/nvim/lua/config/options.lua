@@ -4,7 +4,9 @@ vim.cmd([[hi @lsp.type.number gui=bold]])
 vim.cmd([[set completeopt+=menuone,noselect,popup]])
 
 vim.g.mapleader = " "
-vim.g.vimtex_view_method = "zathura"
+-- Skim is the macOS-native PDF viewer with first-class VimTeX SyncTeX support
+-- (forward + reverse search). No D-Bus, no dotool.
+vim.g.vimtex_view_method = "skim"
 
 vim.opt.winborder = "rounded"
 vim.opt.tabstop = 2
