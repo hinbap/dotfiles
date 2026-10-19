@@ -2,11 +2,11 @@
 macos-titlebar-style = hidden
 title = " "
 macos-titlebar-proxy-icon = hidden
-background-opacity = 0.7
+background-opacity = 0.8
 background-blur-radius = 75
 clipboard-read = allow
 # theme = Onenord
-theme = Rose Pine
+theme = Tomorrow Night Burns
 background = #000000
 # 151718
 # background = #12120F
