@@ -6,17 +6,17 @@ return {
 		---@type ibl.config
 		opts = {},
 		config = function()
-			local highlight = {
-				"CursorColumn",
-				"Whitespace",
-			}
+			-- local highlight = {
+			-- 	"CursorColumn",
+			-- 	"Whitespace",
+			-- }
 
 			require("ibl").setup({
-				indent = { highlight = highlight, char = "" },
-				whitespace = {
-					highlight = highlight,
-					remove_blankline_trail = false,
-				},
+				-- indent = { highlight = highlight, char = "" },
+				-- whitespace = {
+				-- 	highlight = highlight,
+				-- 	remove_blankline_trail = false,
+				-- },
 				scope = { enabled = false },
 			})
 		end,
