@@ -102,7 +102,7 @@ return {
 				},
 			})
 
-			vim.cmd.colorscheme("nordic")
+			-- vim.cmd.colorscheme("nordic")
 		end,
 	},
 
@@ -134,6 +134,23 @@ return {
 					light = "lotus",
 				},
 			})
+		end,
+	},
+
+	{
+		"metalelf0/black-metal-theme-neovim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("black-metal").setup({
+				-- optional configuration here, e.g.:
+				theme = "emperor",
+				transparent = true,
+				trve = true, -- switch this to false if you want light variants
+			})
+			require("black-metal").load()
+
+			vim.cmd.colorscheme("black-metal")
 		end,
 	},
 }
