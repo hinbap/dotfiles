@@ -107,50 +107,23 @@ return {
 	},
 
 	{
-		"rebelot/kanagawa.nvim",
-		lazy = false,
-		priority = 1000,
+		"rose-pine/neovim",
+		name = "rose-pine",
 		config = function()
-			require("kanagawa").setup({
-				undercurl = true,
-				commentStyle = { italic = true },
-				functionStyle = { italic = true, bold = true },
-				keywordStyle = { italic = true },
-				statementStyle = { bold = true },
-				typeStyle = {},
-				transparent = true,
-				dimInactive = true,
-				terminalColors = true,
-				colors = { -- add/modify theme and palette colors
-					palette = {},
-					theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
-				},
-				overrides = function(colors) -- add/modify highlights
-					return {}
-				end,
-				theme = "dragon",
-				background = {
-					dark = "dragon",
-					light = "lotus",
+			require("rose-pine").setup({
+				variant = "auto", -- auto, main, moon, or dawn
+				dark_variant = "main", -- main, moon, or dawn
+				dim_inactive_windows = false,
+				extend_background_behind_borders = true,
+
+				styles = {
+					bold = true,
+					italic = true,
+					transparency = true,
 				},
 			})
-		end,
-	},
 
-	{
-		"metalelf0/black-metal-theme-neovim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("black-metal").setup({
-				-- optional configuration here, e.g.:
-				theme = "emperor",
-				transparent = true,
-				trve = true, -- switch this to false if you want light variants
-			})
-			require("black-metal").load()
-
-			vim.cmd.colorscheme("black-metal")
+			vim.cmd("colorscheme rose-pine")
 		end,
 	},
 }
