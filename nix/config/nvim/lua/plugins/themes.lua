@@ -6,22 +6,22 @@ return {
 			require("gruvbox").setup({
 				terminal_colors = true,
 				transparent_mode = true,
-				contrast = "hard",
-				palette_overrides = { dark0_hard = "#0E1018" },
+				-- contrast = "hard",
+				-- palette_overrides = { dark0_hard = "#0E1018" },
 				overrides = {
-					NormalFloat = { fg = "#ebdbb2", bg = "#504945" },
-					Comment = { fg = "#81878f", italic = true, bold = true },
-					Define = { link = "GruvboxPurple" },
-					Macro = { link = "GruvboxPurple" },
-					["@constant.builtin"] = { link = "GruvboxPurple" },
-					["@storageclass.lifetime"] = { link = "GruvboxAqua" },
-					["@text.note"] = { link = "TODO" },
-					["@namespace.rust"] = { link = "Include" },
-					["@punctuation.bracket"] = { link = "GruvboxOrange" },
-					texMathDelimZoneLI = { link = "GruvboxOrange" },
-					texMathDelimZoneLD = { link = "GruvboxOrange" },
-					luaParenError = { link = "luaParen" },
-					luaError = { link = "NONE" },
+					-- NormalFloat = { fg = "#ebdbb2", bg = "#504945" },
+					-- Comment = { fg = "#81878f", italic = true, bold = true },
+					-- Define = { link = "GruvboxPurple" },
+					-- Macro = { link = "GruvboxPurple" },
+					-- ["@constant.builtin"] = { link = "GruvboxPurple" },
+					-- ["@storageclass.lifetime"] = { link = "GruvboxAqua" },
+					-- ["@text.note"] = { link = "TODO" },
+					-- ["@namespace.rust"] = { link = "Include" },
+					-- ["@punctuation.bracket"] = { link = "GruvboxOrange" },
+					-- texMathDelimZoneLI = { link = "GruvboxOrange" },
+					-- texMathDelimZoneLD = { link = "GruvboxOrange" },
+					-- luaParenError = { link = "luaParen" },
+					-- luaError = { link = "NONE" },
 					ContextVt = { fg = "#878788" },
 					CopilotSuggestion = { fg = "#878787" },
 					CocCodeLens = { fg = "#878787" },
@@ -31,8 +31,8 @@ return {
 					CocPumDetail = { fg = "#fe8019" },
 					DiagnosticVirtualTextWarn = { fg = "#dfaf87" },
 					-- fold
-					Folded = { fg = "#fe8019", bg = "#0E1018", italic = true },
-					SignColumn = { bg = "#fe8019" },
+					-- Folded = { fg = "#fe8019", bg = "#0E1018", italic = true },
+					-- SignColumn = { bg = "#fe8019" },
 					-- new git colors
 					DiffAdd = {
 						bold = true,
@@ -59,31 +59,33 @@ return {
 						bg = "#213352",
 					},
 					-- statusline
-					StatusLine = { bg = "#ffffff", fg = "#0E1018" },
-					StatusLineNC = { bg = "#3c3836", fg = "#0E1018" },
-					CursorLineNr = { fg = "#fabd2f", bg = "" },
-					GruvboxOrangeSign = { fg = "#dfaf87", bg = "#0E1018" },
-					GruvboxAquaSign = { fg = "#8EC07C", bg = "#0E1018" },
-					GruvboxGreenSign = { fg = "#b8bb26", bg = "#0E1018" },
-					GruvboxRedSign = { fg = "#fb4934", bg = "#0E1018" },
-					GruvboxBlueSign = { fg = "#83a598", bg = "#0E1018" },
-					WilderMenu = { fg = "#ebdbb2", bg = "" },
-					WilderAccent = { fg = "#f4468f", bg = "" },
+					-- StatusLine = { bg = "#ffffff", fg = "#0E1018" },
+					-- StatusLineNC = { bg = "#3c3836", fg = "#0E1018" },
+					-- CursorLineNr = { fg = "#fabd2f", bg = "" },
+					-- GruvboxOrangeSign = { fg = "#dfaf87", bg = "#0E1018" },
+					-- GruvboxAquaSign = { fg = "#8EC07C", bg = "#0E1018" },
+					-- GruvboxGreenSign = { fg = "#b8bb26", bg = "#0E1018" },
+					-- GruvboxRedSign = { fg = "#fb4934", bg = "#0E1018" },
+					-- GruvboxBlueSign = { fg = "#83a598", bg = "#0E1018" },
+					-- WilderMenu = { fg = "#ebdbb2", bg = "" },
+					-- WilderAccent = { fg = "#f4468f", bg = "" },
 					-- coc semantic token
-					CocSemStruct = { link = "GruvboxYellow" },
-					CocSemKeyword = { fg = "", bg = "#0E1018" },
-					CocSemEnumMember = { fg = "", bg = "#0E1018" },
-					CocSemTypeParameter = { fg = "", bg = "#0E1018" },
-					CocSemComment = { fg = "", bg = "#0E1018" },
-					CocSemMacro = { fg = "", bg = "#0E1018" },
-					CocSemVariable = { fg = "", bg = "#0E1018" },
-					CocSemFunction = { fg = "", bg = "#0E1018" },
-					SnacksPicker = { fg = "#ebdbb2", bg = "#0E1018" },
-					SnacksPickerBorder = { fg = "#ebdbb2", bg = "#0E1018" },
-					SnacksPickerBoxBorder = { fg = "#ebdbb2", bg = "#0E1018" },
-					SnacksNormal = { fg = "#ebdbb2", bg = "#0E1018" },
+					-- CocSemStruct = { link = "GruvboxYellow" },
+					-- CocSemKeyword = { fg = "", bg = "#0E1018" },
+					-- CocSemEnumMember = { fg = "", bg = "#0E1018" },
+					-- CocSemTypeParameter = { fg = "", bg = "#0E1018" },
+					-- CocSemComment = { fg = "", bg = "#0E1018" },
+					-- CocSemMacro = { fg = "", bg = "#0E1018" },
+					-- CocSemVariable = { fg = "", bg = "#0E1018" },
+					-- CocSemFunction = { fg = "", bg = "#0E1018" },
+					-- SnacksPicker = { fg = "#ebdbb2", bg = "" },
+					-- SnacksPickerBorder = { fg = "#ebdbb2", bg = "" },
+					-- SnacksPickerBoxBorder = { fg = "#ebdbb2", bg = "" },
+					-- SnacksNormal = { fg = "#ebdbb2", bg = "" },
 				},
 			})
+
+			vim.cmd.colorscheme("gruvbox")
 		end,
 	},
 
@@ -172,32 +174,31 @@ return {
 						variables = "none",
 					},
 				})
-				require("black-metal").load()
+				-- require("black-metal").load()
 			end,
 		},
 	},
 
 	{
-		"folke/tokyonight.nvim",
+		"wnkz/monoglow.nvim",
 		lazy = false,
 		priority = 1000,
 		opts = {},
 		config = function()
-			require("tokyonight").setup({
+			require("monoglow").setup({
 				transparent = true,
-				styles = {
-					-- Style to be applied to different syntax groups
-					-- Value is any valid attr-list value for `:help nvim_set_hl`
-					comments = { italic = true },
-					keywords = { italic = true },
-					functions = {},
-					variables = {},
-					-- Background styles. Can be "dark", "transparent" or "normal"
-					sidebars = "dark", -- style for sidebars, see below
-					floats = "dark", -- style for floating windows
-				},
+				on_highlights = function(hl, c)
+					-- Override with full definition (recommended)
+					hl["@function"] = { fg = c.syntax.func_def, italic = true, bold = true }
+					hl.Boolean = { fg = c.syntax.boolean, bold = true, italic = true }
+					hl["@keyword"] = { fg = c.syntax.keyword, italic = true }
+
+					-- Or use vim.tbl_extend for partial overrides
+					hl.Comment = vim.tbl_extend("force", hl.Comment, { bold = true })
+				end,
 			})
-			vim.cmd([[colorscheme tokyonight]])
+
+			vim.cmd.colorscheme("monoglow")
 		end,
 	},
 }
