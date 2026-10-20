@@ -6,7 +6,7 @@ background-opacity = 0.8
 background-blur-radius = 75
 clipboard-read = allow
 # theme = Onenord
-theme = Tomorrow Night Burns
+theme = TokyoNight
 background = #000000
 # 151718
 # background = #12120F

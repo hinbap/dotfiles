@@ -1,3 +1,17 @@
+vim.api.nvim_set_hl(0, "StatusLine", { bg = "NONE", ctermbg = "NONE" })
+vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "NONE", ctermbg = "NONE" })
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+	callback = function()
+		-- Main winbar background groups
+		vim.api.nvim_set_hl(0, "DropBarMenuNormalFloat", { bg = "none" })
+		vim.api.nvim_set_hl(0, "DropBarMenuSbar", { bg = "none" })
+		vim.api.nvim_set_hl(0, "DropBarMenuThumb", { bg = "none" })
+		vim.api.nvim_set_hl(0, "DropBarBar", { bg = "none" })
+		vim.api.nvim_set_hl(0, "DropBarCurrentContext", { bg = "none" })
+	end,
+})
+
 -- format before saving
 vim.api.nvim_create_autocmd("BufWritePre", {
 	callback = function(args)
