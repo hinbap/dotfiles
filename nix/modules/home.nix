@@ -9,6 +9,11 @@
 		"/Library/TeX/texbin"
 	];
 
+	# nix texlive's kpathsea defaults TEXMFHOME to ~/texmf, but the shared style
+	# files (homework.sty, ...) are symlinked into ~/Library/texmf below, which is
+	# only the default when using MacTeX's binaries.
+	home.sessionVariables.TEXMFHOME = "${config.home.homeDirectory}/Library/texmf";
+
   programs.git = {
     enable = true;
 

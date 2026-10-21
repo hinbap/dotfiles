@@ -19,7 +19,6 @@
 		});
 	in [
 		uv
-		texliveMedium
 		imagemagick
 		yazi
 		zellij
