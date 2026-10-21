@@ -69,6 +69,43 @@
 			export PATH="$HOME/.local/bin:$PATH"
 			export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
 			export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+			# Session D-Bus for zathura SyncTeX: vimtex passes --synctex-forward,
+			# which requires a reachable session bus or zathura refuses to open
+			# the PDF at all. Start a per-user daemon on a fixed socket if
+			# needed; no launchd, no machine-id. The minimal session.conf is
+			# generated on first use because the nixpkgs default uses launchd
+			# socket activation which conflicts with --address.
+			if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
+				export DBUS_SESSION_BUS_ADDRESS="unix:path=/tmp/dbus-doyeon.sock"
+				if ! dbus-send --session --dest=org.freedesktop.DBus --type=method_call \
+					--print-reply /org/freedesktop/DBus org.freedesktop.DBus.ListNames \
+					>/dev/null 2>&1; then
+					CONF="/tmp/dbus-doyeon-session.conf"
+					if [ ! -f "$CONF" ]; then
+						cat > "$CONF" <<'DBUSCONF'
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE busconfig PUBLIC "-//freedesktop//DTD D-Bus Bus Configuration 1.0//EN"
+ "http://www.freedesktop.org/standards/dbus/1.0/busconfig.dtd">
+<busconfig>
+  <type>session</type>
+  <keep_umask/>
+  <listen>unix:path=/tmp/dbus-doyeon.sock</listen>
+  <auth>EXTERNAL</auth>
+  <standard_session_servicedirs/>
+  <policy context="default">
+    <allow send_destination="*" eavesdrop="true"/>
+    <allow eavesdrop="true"/>
+    <allow own="*"/>
+  </policy>
+  <limit name="max_incoming_bytes">1000000000</limit>
+  <limit name="max_message_size">1000000000</limit>
+</busconfig>
+DBUSCONF
+					fi
+					rm -f /tmp/dbus-doyeon.sock
+					dbus-daemon --config-file="$CONF" --fork
+				fi
+			fi
 			if [[ -f ~/.config/zsh/.zshrc ]]; then
 				source ~/.config/zsh/.zshrc
 			fi
@@ -131,6 +168,7 @@
   home.file.".config/tmux".source = ../config/tmux;
 	home.file.".config/starship.toml".source = ../config/starship/starship.toml;
 	home.file.".config/yazi".source = ../config/yazi;
+	home.file.".config/zathura".source = ../config/zathura;
 
 	# Make shared LaTeX style files (homework.sty, macros.sty, ...) discoverable
 	# from any .tex file by exposing them through TEXMFHOME (~/Library/texmf on

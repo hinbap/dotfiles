@@ -85,7 +85,7 @@ return {
 				},
 			})
 
-			vim.cmd.colorscheme("gruvbox")
+			-- vim.cmd.colorscheme("gruvbox")
 		end,
 	},
 

@@ -2,11 +2,11 @@
 macos-titlebar-style = hidden
 title = " "
 macos-titlebar-proxy-icon = hidden
-background-opacity = 0.8
-background-blur-radius = 75
+background-opacity = 0.75
+background-blur-radius = 60
 clipboard-read = allow
 # theme = Onenord
-theme = NOTch2K
+theme = monoglow
 background = #000000
 # 151718
 # background = #12120F

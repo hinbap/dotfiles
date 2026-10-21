@@ -1,11 +1,12 @@
 # ─────────────────────────────────────────────
-# Zathura
+# Zathura — monoglow
 # ─────────────────────────────────────────────
 
 # General
 set selection-clipboard clipboard
 set guioptions ""
 set window-title-page true
+set window-opacity 0.5
 
 # Page layout
 set adjust-open "best-fit"
@@ -18,47 +19,47 @@ set scroll-step 100
 set zoom-min 10
 
 # ─────────────────────────────────────────────
-# Colors
+# Colors (monoglow Z, bg matched to Ghostty #000000)
 # ─────────────────────────────────────────────
 
 # UI
-set default-bg "#1e1e2e"
-set default-fg "#cdd6f4"
+set default-bg "#000000"
+set default-fg "#cccccc"
 
-set statusbar-bg "#181825"
-set statusbar-fg "#cdd6f4"
+set statusbar-bg "#121212"
+set statusbar-fg "#cccccc"
 
-set inputbar-bg "#181825"
-set inputbar-fg "#cdd6f4"
+set inputbar-bg "#121212"
+set inputbar-fg "#cccccc"
 
 # Notifications
-set notification-bg "#181825"
-set notification-fg "#cdd6f4"
+set notification-bg "#121212"
+set notification-fg "#cccccc"
 
-set notification-error-bg "#181825"
-set notification-error-fg "#f38ba8"
+set notification-error-bg "#121212"
+set notification-error-fg "#ffc0b9"
 
-set notification-warning-bg "#181825"
-set notification-warning-fg "#f9e2af"
+set notification-warning-bg "#121212"
+set notification-warning-fg "#fce094"
 
 # Completion menu
-set completion-bg "#181825"
-set completion-fg "#cdd6f4"
-set completion-highlight-bg "#89b4fa"
-set completion-highlight-fg "#1e1e2e"
+set completion-bg "#121212"
+set completion-fg "#cccccc"
+set completion-highlight-bg "#1bfd9c"
+set completion-highlight-fg "#000000"
 
 # Search / highlights
-set highlight-color "#f9e2af"
-set highlight-active-color "#89b4fa"
+set highlight-color "#66b2b2"
+set highlight-active-color "#1bfd9c"
 
 # ─────────────────────────────────────────────
-# PDF appearance
+# PDF appearance (dark, matching the terminal)
 # ─────────────────────────────────────────────
 
 # Dark mode for PDFs
 set recolor true
-set recolor-lightcolor "#1e1e2e"
-set recolor-darkcolor "#cdd6f4"
+set recolor-lightcolor "#000000"
+set recolor-darkcolor "#cccccc"
 
 # Preserve colors in diagrams/images
 set recolor-keephue true

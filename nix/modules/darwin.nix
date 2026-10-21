@@ -59,9 +59,16 @@
 
 		bun
 		tmux
-		zathuraPkgs.zathura_core
-		(noAppstream zathuraPkgs.zathura_pdf_mupdf)
-		(noAppstream zathuraPkgs.zathura_pdf_poppler)
+		dbus
+		# zathuraWrapper bundles the PDF backends and sets ZATHURA_PLUGINS_PATH;
+		# installing zathura_core + plugins separately doesn't work on nix-darwin
+		# because /lib isn't linked into the system profile.
+		(zathuraPkgs.zathuraWrapper.override {
+			plugins = [
+				(noAppstream zathuraPkgs.zathura_pdf_mupdf)
+				(noAppstream zathuraPkgs.zathura_pdf_poppler)
+			];
+		})
 
 		texlivePackages.doublestroke
 

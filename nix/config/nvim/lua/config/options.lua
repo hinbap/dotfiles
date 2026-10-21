@@ -4,9 +4,15 @@ vim.cmd([[hi @lsp.type.number gui=bold]])
 vim.cmd([[set completeopt+=menuone,noselect,popup]])
 
 vim.g.mapleader = " "
--- Skim is the macOS-native PDF viewer with first-class VimTeX SyncTeX support
--- (forward + reverse search). No D-Bus, no dotool.
-vim.g.vimtex_view_method = "skim"
+-- Zathura: themed to monoglow via ~/.config/zathura/zathurarc.
+-- Don't forward-search on start: --synctex-forward requires a D-Bus session
+-- bus, and if the bus is unreachable zathura exits without opening the PDF.
+-- The initial open just shows the file; latexmk -pvc (VimtexCompile) updates
+-- the PDF on disk and zathura's file monitor auto-reloads it. Explicit
+-- forward search (\lv) still uses --synctex-forward and needs D-Bus (provided
+-- by the zsh-init snippet in home.nix).
+vim.g.vimtex_view_method = "zathura"
+vim.g.vimtex_view_forward_search_on_start = 0
 
 vim.opt.winborder = "rounded"
 vim.opt.tabstop = 2
