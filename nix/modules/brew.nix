@@ -38,7 +38,6 @@
 			"sqlitestudio"
 			"font-zed-mono"
 			"font-fira-mono-nerd-font"
-			"shottr"
 		];
 
 		masApps = {
@@ -47,7 +46,6 @@
 			"Microsoft Outlook" = 985367838;
 			"NordVPN: VPN Fast & Secure" = 905953485;
 			"Kakaotalk" = 869223134;
-			"Fantastical - Calendar" = 975937182;
 		};
 	};
 

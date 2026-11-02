@@ -13,6 +13,7 @@
 	# files (homework.sty, ...) are symlinked into ~/Library/texmf below, which is
 	# only the default when using MacTeX's binaries.
 	home.sessionVariables.TEXMFHOME = "${config.home.homeDirectory}/Library/texmf";
+	home.sessionVariables.TEXINPUTS = ".:${config.home.homeDirectory}/Library/texmf/tex/latex/local//:";
 
   programs.git = {
     enable = true;
@@ -121,6 +122,8 @@ DBUSCONF
 				source "$(fzf-share)/key-bindings.zsh"
 				source "$(fzf-share)/completion.zsh"
 			fi
+			export TEXMFHOME="$HOME/Library/texmf"
+			export TEXINPUTS=".:$TEXMFHOME/tex/latex/local//:''${TEXINPUTS:-}"
 		'';
 	};
 

@@ -145,38 +145,8 @@ return {
 				},
 			})
 
-			-- vim.cmd.colorscheme("vague")
+			vim.cmd.colorscheme("vague")
 		end,
-	},
-
-	{
-		-- Using lazy.nvim
-		{
-			"metalelf0/black-metal-theme-neovim",
-			lazy = false,
-			priority = 1000,
-			config = function()
-				require("black-metal").setup({
-					-- optional configuration here, e.g.:
-
-					theme = "burzum",
-					transparent = true,
-					trve = true, -- switch this to false if you want light variants
-					code_style = {
-						comments = "italic",
-						conditionals = "none",
-						functions = "none",
-						keywords = "none",
-						headings = "bold", -- Markdown headings
-						operators = "none",
-						keyword_return = "none",
-						strings = "none",
-						variables = "none",
-					},
-				})
-				-- require("black-metal").load()
-			end,
-		},
 	},
 
 	{
@@ -198,7 +168,43 @@ return {
 				end,
 			})
 
-			vim.cmd.colorscheme("monoglow")
+			-- vim.cmd.colorscheme("monoglow")
+		end,
+	},
+
+	{
+		"rebelot/kanagawa.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			-- Default options:
+			require("kanagawa").setup({
+				compile = false, -- enable compiling the colorscheme
+				undercurl = true, -- enable undercurls
+				commentStyle = { italic = true },
+				functionStyle = {},
+				keywordStyle = { italic = true },
+				statementStyle = { bold = true },
+				typeStyle = {},
+				transparent = true, -- do not set background color
+				dimInactive = false, -- dim inactive window `:h hl-NormalNC`
+				terminalColors = true, -- define vim.g.terminal_color_{0,17}
+				colors = { -- add/modify theme and palette colors
+					palette = {},
+					theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
+				},
+				overrides = function(colors) -- add/modify highlights
+					return {}
+				end,
+				theme = "wave", -- Load "wave" theme
+				background = { -- map the value of 'background' option to a theme
+					dark = "dragon", -- try "dragon" !
+					light = "lotus",
+				},
+			})
+
+			-- setup must be called before loading
+			-- vim.cmd("colorscheme kanagawa")
 		end,
 	},
 }
