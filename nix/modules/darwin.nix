@@ -42,6 +42,8 @@
 		rustc
 		cargo
 
+
+		eas-cli
 		python3
 		python313
 		btop
